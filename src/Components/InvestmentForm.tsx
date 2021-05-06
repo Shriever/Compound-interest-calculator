@@ -28,7 +28,7 @@ const InvestmentForm: React.FC = () => {
       <Form.Group controlId='formBasicPrincipal'>
         <Form.Label>Initial Investment</Form.Label>
         <Form.Control
-          min='0'
+          min='100'
           type='number'
           name='principal'
           value={state.inputs.principal}
@@ -44,13 +44,6 @@ const InvestmentForm: React.FC = () => {
             })
           }
         />
-        <Form.Group className='radio-buttons'>
-          <Form.Check id='monthly' name='time' type='radio' value='Monthly' />
-          <Form.Label htmlFor='monthly'>Monthly</Form.Label>
-
-          <Form.Check id='annually' name='time' type='radio' value='annually' />
-          <Form.Label htmlFor='annually'>Annually</Form.Label>
-        </Form.Group>
       </Form.Group>
       <Form.Group controlId='formBasicContributions'>
         <Form.Label>Contributions</Form.Label>
@@ -71,6 +64,13 @@ const InvestmentForm: React.FC = () => {
             })
           }
         />
+        <Form.Group className='radio-buttons'>
+          <Form.Check id='monthly' name='time' type='radio' value='Monthly' />
+          <Form.Label htmlFor='monthly'>Monthly</Form.Label>
+
+          <Form.Check id='annually' name='time' type='radio' value='annually' />
+          <Form.Label htmlFor='annually'>Annually</Form.Label>
+        </Form.Group>
       </Form.Group>
       <Form.Group controlId='formBasicTimeSpan'>
         <Form.Label>Investment Time Span in Years</Form.Label>
@@ -113,17 +113,25 @@ const InvestmentForm: React.FC = () => {
           }
         />
       </Form.Group>
-      <Form.Group
-        controlId='formBasicCompoundFrequency'
-        className='radio-buttons'
-      >
-        <Form.Check id='daily' name='time' type='radio' value='daily' />
+      <Form.Group controlId='formBasicCompoundRate' className='radio-buttons'>
+        <Form.Label className='group-title'>Compound Frequency</Form.Label>
+        <Form.Check id='daily' name='compoundRate' type='radio' value='daily' />
         <Form.Label htmlFor='daily'>Daily</Form.Label>
-        <Form.Check id='monthly' name='time' type='radio' value='Monthly' />
-        <Form.Label htmlFor='monthly'>Monthly</Form.Label>
+        <Form.Check
+          id='monthly-comp'
+          name='compoundRate'
+          type='radio'
+          value='Monthly'
+        />
+        <Form.Label htmlFor='monthly-comp'>Monthly</Form.Label>
 
-        <Form.Check id='annually' name='time' type='radio' value='annually' />
-        <Form.Label htmlFor='annually'>Annually</Form.Label>
+        <Form.Check
+          id='annually-comp'
+          name='compoundRate'
+          type='radio'
+          value='annually'
+        />
+        <Form.Label htmlFor='annually-comp'>Annually</Form.Label>
       </Form.Group>
     </Form>
   );
