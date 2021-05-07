@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
+import calculateCompound from "./../utils/Calculator";
 
 interface state {
   inputs: {
@@ -9,6 +10,13 @@ interface state {
     rateOfReturn: number;
   };
 }
+const dummyData = {
+  initialDeposit: 10000,
+  contributions: { amount: 0, rate: "annually" },
+  timeSpan: 1,
+  rateOfReturn: 10,
+  compoundFrequency: "annually",
+};
 
 const InvestmentForm: React.FC = () => {
   const [state, setState] = useState<state>({
@@ -22,6 +30,7 @@ const InvestmentForm: React.FC = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
   };
+  console.log(calculateCompound(dummyData));
 
   return (
     <Form onSubmit={handleSubmit} className='bt-1'>
