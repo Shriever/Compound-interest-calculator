@@ -1,39 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
-import calculateCompound from "./../utils/Calculator";
 
-interface state {
-  inputs: {
-    principal: number;
-    contributions: number;
-    timeSpan: number;
-    rateOfReturn: number;
-  };
-}
-const dummyData = {
-  initialDeposit: 10000,
-  contributions: { amount: 0, rate: "annually" },
-  timeSpan: 1,
-  rateOfReturn: 10,
-  compoundFrequency: "annually",
-};
-
-const InvestmentForm: React.FC = () => {
-  const [state, setState] = useState<state>({
-    inputs: {
-      principal: 10000,
-      contributions: 100,
-      timeSpan: 5,
-      rateOfReturn: 10,
-    },
-  });
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-  };
-  console.log(calculateCompound(dummyData));
-
+const InvestmentForm: React.FC = ({ handleFormChange, state }) => {
   return (
-    <Form onSubmit={handleSubmit} className='bt-1'>
+    <Form className='bt-1'>
       <Form.Group controlId='formBasicPrincipal'>
         <Form.Label>Initial Investment</Form.Label>
         <Form.Control
@@ -41,17 +11,7 @@ const InvestmentForm: React.FC = () => {
           type='number'
           name='principal'
           value={state.inputs.principal}
-          onChange={e =>
-            setState(prevState => {
-              return {
-                ...prevState,
-                inputs: {
-                  ...prevState.inputs,
-                  principal: Number(e.target.value),
-                },
-              };
-            })
-          }
+          onChange={handleFormChange}
         />
       </Form.Group>
       <Form.Group controlId='formBasicContributions'>

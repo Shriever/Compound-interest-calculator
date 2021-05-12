@@ -1,17 +1,17 @@
-interface userData {
-  initialDeposit: number;
+export interface userData {
+  principal: number;
   annualContribution: number;
   timeSpan: number;
   rateOfReturn: number;
 }
 
 const calculateCompound = (data: userData) => {
-  const { initialDeposit, annualContribution, timeSpan, rateOfReturn } = data;
+  const { principal, annualContribution, timeSpan, rateOfReturn } = data;
 
   const rate = rateOfReturn / 100;
 
   const investmentTotal = calculateCompoundPrincipal(
-    initialDeposit,
+    principal,
     rate,
     timeSpan
   );
