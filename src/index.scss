@@ -1,16 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #000;
+}
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 /*
 ==============
-InvestmentForm
+InvestmentForm Start
 ==============
 */
 .radio-buttons {
   display: flex;
-
-  
+  flex-wrap: wrap;
+  .group-title {
+    flex-basis: 100%;
+  }
 }
+/*
+==============
+InvestmentForm End
+==============
+*/
