@@ -1,18 +1,9 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-
-interface Props {
-  handleFormChange: (e: any) => void;
-  state: {
-    principal: number;
-    annualContribution: number;
-    timeSpan: number;
-    rateOfReturn: number;
-  };
-}
+import { Props } from "./../utils/interfaces";
 
 const InvestmentForm = (props: Props) => {
-  const { handleFormChange, state } = props;
+  const { handleFormChange, inputs } = props;
   return (
     <Form className='bt-1'>
       <Form.Group controlId='formBasicPrincipal'>
@@ -21,7 +12,7 @@ const InvestmentForm = (props: Props) => {
           min='100'
           type='number'
           name='principal'
-          value={state.principal}
+          value={inputs.principal}
           onChange={handleFormChange}
         />
       </Form.Group>
@@ -31,7 +22,7 @@ const InvestmentForm = (props: Props) => {
           min='0'
           type='number'
           name='annual-contribution'
-          value={state.annualContribution}
+          value={inputs.annualContribution}
           onChange={handleFormChange}
         />
       </Form.Group>
@@ -41,7 +32,7 @@ const InvestmentForm = (props: Props) => {
           min='0'
           type='number'
           name='time-span'
-          value={state.timeSpan}
+          value={inputs.timeSpan}
           onChange={handleFormChange}
         />
       </Form.Group>
@@ -52,7 +43,7 @@ const InvestmentForm = (props: Props) => {
           max='1000'
           type='number'
           name='rate-of-return'
-          value={state.rateOfReturn}
+          value={inputs.rateOfReturn}
           onChange={handleFormChange}
         />
       </Form.Group>

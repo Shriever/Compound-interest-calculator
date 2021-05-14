@@ -2,59 +2,41 @@ import React, { useCallback, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import InvestmentForm from "./Components/InvestmentForm";
 import calculateCompound from "./utils/Calculator";
-// import { userData } from "./utils/Calculator";
+import findInputSource from "./utils/findInputSource";
+import validateInputs from "./utils/validateInputs";
+import { fieldErrors } from "./utils/interfaces";
 
 function App() {
-  const [state, setState] = useState({
+  const [inputs, setInputs] = useState({
     principal: 10000,
     annualContribution: 100,
     timeSpan: 5,
     rateOfReturn: 10,
   });
   const [total, setTotal] = useState<number>(0);
+  const [fieldErrors, setFieldErrors] = useState<fieldErrors>({
+    principal: null,
+    annualContribution: null,
+    timeSpan: null,
+    rateOfReturn: null,
+  });
 
-  const findInputSource = (e: any, prevState: any) => {
-    const inputName: string = e.target.name;
-    const inputValue: number = e.target.value;
-    if (inputName === "principal") {
-      return {
-        ...prevState,
-        principal: Number(inputValue),
-      };
-    } else if (inputName === "annual-contribution") {
-      return {
-        ...prevState,
-        annualContribution: inputValue,
-      };
-    } else if (inputName === "time-span") {
-      return {
-        ...prevState,
-        timeSpan: inputValue,
-      };
-    } else if (inputName === "rate-of-return") {
-      return {
-        ...prevState,
-        rateOfReturn: inputValue,
-      };
-    }
-    return prevState;
-  };
-
-  const handleFormChange = useCallback(
+    const handleFormChange = useCallback(
     (e: any) => {
-      setState(prevState => {
+      validateInputs(inputs, setFieldErrors);
+      setInputs(prevState => {
         return findInputSource(e, prevState);
       });
-      setTotal(calculateCompound(state));
+      setTotal(calculateCompound(inputs));
     },
-    [state]
+    [inputs]
   );
 
   useEffect(() => {
     handleFormChange({ target: { name: "" } });
   }, [handleFormChange]);
 
-  const investmentFormProps = { handleFormChange, state };
+  const investmentFormProps = { handleFormChange, inputs };
 
   return (
     <div className='App'>

@@ -1,20 +1,11 @@
-export interface userData {
-  principal: number;
-  annualContribution: number;
-  timeSpan: number;
-  rateOfReturn: number;
-}
+import { userData } from "./interfaces";
 
 const calculateCompound = (data: userData) => {
   const { principal, annualContribution, timeSpan, rateOfReturn } = data;
 
   const rate = rateOfReturn / 100;
 
-  const investmentTotal = calculateCompoundPrincipal(
-    principal,
-    rate,
-    timeSpan
-  );
+  const investmentTotal = calculateCompoundPrincipal(principal, rate, timeSpan);
 
   const contributionTotal = calculateCompoundSeries(
     annualContribution,
