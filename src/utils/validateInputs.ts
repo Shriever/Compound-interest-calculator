@@ -1,27 +1,31 @@
 import { fieldErrors, userData } from "./interfaces";
 
 const validatePrincipal = (principal: number) => {
-  return null;
+  if (principal <= 0) return "Please enter an investment amount above 0";
+  return "";
 };
 
-const validateAnnualContributions = (annualContributions: number) => {
-  return null;
+const validateAnnualContributions = (annualContribution: number) => {
+  if (annualContribution < 0) return "Contribution amount cannot be negative";
+  return "";
 };
 
 const validateTimeSpan = (timeSpan: number) => {
-  return null;
+  if (timeSpan <= 0) return "Please enter a time span above 0";
+  return "";
 };
 
 const validateRateOfReturn = (rateOfReturn: number) => {
-  return null;
+  if (rateOfReturn <= 0) return "Please enter a rate of return above 0";
+  return "";
 };
 
 const validateInputs = (inputs: userData, setFieldErrors: any) => {
   const newFieldErrors: fieldErrors = {
-    principal: null,
-    annualContribution: null,
-    timeSpan: null,
-    rateOfReturn: null,
+    principal: "",
+    annualContribution: "",
+    timeSpan: "",
+    rateOfReturn: "",
   };
   newFieldErrors.principal = validatePrincipal(inputs.principal);
   newFieldErrors.annualContribution = validateAnnualContributions(

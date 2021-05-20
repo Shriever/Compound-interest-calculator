@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "react-bootstrap";
+import { Form, Alert } from "react-bootstrap";
 import { Props } from "./../utils/interfaces";
 
 const InvestmentForm = (props: Props) => {
@@ -15,9 +15,14 @@ const InvestmentForm = (props: Props) => {
           value={inputs.principal}
           onChange={handleFormChange}
         />
+        {props.fieldErrors.principal && (
+          <Alert variant='danger' className='form-error'>
+            {props.fieldErrors.principal}
+          </Alert>
+        )}
       </Form.Group>
       <Form.Group controlId='formBasicContributions'>
-        <Form.Label>Contributions</Form.Label>
+        <Form.Label>Annual Contribution</Form.Label>
         <Form.Control
           min='0'
           type='number'
@@ -25,6 +30,11 @@ const InvestmentForm = (props: Props) => {
           value={inputs.annualContribution}
           onChange={handleFormChange}
         />
+        {props.fieldErrors.annualContribution && (
+          <Alert variant='danger' className='form-error'>
+            {props.fieldErrors.annualContribution}
+          </Alert>
+        )}
       </Form.Group>
       <Form.Group controlId='formBasicTimeSpan'>
         <Form.Label>Investment Time Span in Years</Form.Label>
@@ -35,6 +45,11 @@ const InvestmentForm = (props: Props) => {
           value={inputs.timeSpan}
           onChange={handleFormChange}
         />
+        {props.fieldErrors.timeSpan && (
+          <Alert variant='danger' className='form-error'>
+            {props.fieldErrors.timeSpan}
+          </Alert>
+        )}
       </Form.Group>
       <Form.Group controlId='formBasicRateOfReturn'>
         <Form.Label>Annual Rate of Return</Form.Label>
@@ -46,6 +61,11 @@ const InvestmentForm = (props: Props) => {
           value={inputs.rateOfReturn}
           onChange={handleFormChange}
         />
+        {props.fieldErrors.rateOfReturn && (
+          <Alert variant='danger' className='form-error'>
+            {props.fieldErrors.rateOfReturn}
+          </Alert>
+        )}
       </Form.Group>
     </Form>
   );

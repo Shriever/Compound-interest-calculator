@@ -9,19 +9,20 @@
 body {
   font-family: "Roboto", sans-serif;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
 /*
 ==============
 InvestmentForm Start
 ==============
 */
-.radio-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  .group-title {
-    flex-basis: 100%;
-  }
-}
+
 /*
 ==============
 InvestmentForm End

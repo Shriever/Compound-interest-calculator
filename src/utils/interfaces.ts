@@ -1,5 +1,3 @@
-import { Nullish } from "@testing-library/dom";
-
 export interface userData {
   principal: number;
   annualContribution: number;
@@ -17,4 +15,5 @@ export interface fieldErrors {
 export interface Props {
   handleFormChange: (e: any) => void;
   inputs: userData;
+  fieldErrors: fieldErrors;
 }
