@@ -6,6 +6,7 @@ import findInputSource from "./utils/findInputSource";
 import validateInputs from "./utils/validateInputs";
 import { fieldErrors } from "./utils/interfaces";
 import { Container } from "react-bootstrap";
+import numeral from "numeral";
 
 function App() {
   const [inputs, setInputs] = useState({
@@ -40,10 +41,10 @@ function App() {
   const investmentFormProps = { handleFormChange, inputs, fieldErrors };
 
   return (
-    <Container className='App'>
+    <Container className='app'>
       <h1 className='text-center'>Levi's Compound Interest Calculator</h1>
-      <h2>Future Balance</h2>
-      <h2>${total}</h2>
+      <h2 className='future-balance'>Future Balance</h2>
+      <h2 className='total'>${numeral(total).format("0,0")}</h2>
       <InvestmentForm {...investmentFormProps} />
     </Container>
   );

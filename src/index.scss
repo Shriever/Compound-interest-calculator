@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #000;
+  color: #111;
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -17,11 +17,33 @@ h5,
 h6 {
   text-align: center;
 }
+.investment-form {
+  background-color: #ccc;
+  width: 500px;
+  margin: 0 auto;
+  padding: 15px;
+  border-top: solid #1aca69 10px;
+}
+.total {
+  font-size: 100px;
+}
 /*
 ==============
 InvestmentForm Start
 ==============
 */
+.form-control {
+  width: 300px !important;
+  margin-left: 30px;
+}
+.form-error {
+  margin-left: 30px;
+  margin-top: 10px;
+  width: 375px;
+}
+.form-group {
+  padding-left: 15px;
+}
 
 /*
 ==============

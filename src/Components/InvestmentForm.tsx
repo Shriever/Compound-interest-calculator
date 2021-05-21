@@ -5,10 +5,11 @@ import { Props } from "./../utils/interfaces";
 const InvestmentForm = (props: Props) => {
   const { handleFormChange, inputs } = props;
   return (
-    <Form className='bt-1'>
+    <Form className='bt-1 investment-form'>
       <Form.Group controlId='formBasicPrincipal'>
         <Form.Label>Initial Investment</Form.Label>
         <Form.Control
+          className='form-input'
           min='100'
           type='number'
           name='principal'
@@ -24,6 +25,7 @@ const InvestmentForm = (props: Props) => {
       <Form.Group controlId='formBasicContributions'>
         <Form.Label>Annual Contribution</Form.Label>
         <Form.Control
+          className='form-input'
           min='0'
           type='number'
           name='annual-contribution'
@@ -39,6 +41,7 @@ const InvestmentForm = (props: Props) => {
       <Form.Group controlId='formBasicTimeSpan'>
         <Form.Label>Investment Time Span in Years</Form.Label>
         <Form.Control
+          className='form-input'
           min='0'
           type='number'
           name='time-span'
@@ -54,6 +57,7 @@ const InvestmentForm = (props: Props) => {
       <Form.Group controlId='formBasicRateOfReturn'>
         <Form.Label>Annual Rate of Return</Form.Label>
         <Form.Control
+          className='form-input'
           min='1'
           max='1000'
           type='number'

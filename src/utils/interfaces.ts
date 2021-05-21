@@ -16,4 +16,5 @@ export interface Props {
   handleFormChange: (e: any) => void;
   inputs: userData;
   fieldErrors: fieldErrors;
+  // className: string;
 }
