@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Compound-interest-calculator/static/css/main.c1c2c392.chunk.css",
+    "main.js": "/Compound-interest-calculator/static/js/main.aa9fd18e.chunk.js",
+    "main.js.map": "/Compound-interest-calculator/static/js/main.aa9fd18e.chunk.js.map",
+    "runtime-main.js": "/Compound-interest-calculator/static/js/runtime-main.d8fc687e.js",
+    "runtime-main.js.map": "/Compound-interest-calculator/static/js/runtime-main.d8fc687e.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/Compound-interest-calculator/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.05931ffb.chunk.js": "/Compound-interest-calculator/static/js/2.05931ffb.chunk.js",
+    "static/js/2.05931ffb.chunk.js.map": "/Compound-interest-calculator/static/js/2.05931ffb.chunk.js.map",
+    "index.html": "/Compound-interest-calculator/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/Compound-interest-calculator/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.c1c2c392.chunk.css.map": "/Compound-interest-calculator/static/css/main.c1c2c392.chunk.css.map",
+    "static/js/2.05931ffb.chunk.js.LICENSE.txt": "/Compound-interest-calculator/static/js/2.05931ffb.chunk.js.LICENSE.txt",
+    "static/media/react-logo.60daf01b.png": "/Compound-interest-calculator/static/media/react-logo.60daf01b.png",
+    "static/media/sass-logo.c5213e47.png": "/Compound-interest-calculator/static/media/sass-logo.c5213e47.png",
+    "static/media/typescript-logo.57404d48.png": "/Compound-interest-calculator/static/media/typescript-logo.57404d48.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d8fc687e.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.05931ffb.chunk.js",
+    "static/css/main.c1c2c392.chunk.css",
+    "static/js/main.aa9fd18e.chunk.js"
+  ]
+}
