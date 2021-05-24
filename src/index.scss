@@ -17,15 +17,31 @@ h5,
 h6 {
   text-align: center;
 }
+.app {
+  text-align: center;
+}
 .investment-form {
   background-color: #ccc;
-  width: 500px;
+  width: 430px;
   margin: 0 auto;
   padding: 15px;
   border-top: solid #1aca69 10px;
 }
 .total {
   font-size: 100px;
+}
+.link {
+  padding: 10px;
+  font-size: 30px;
+  background-color: #000000;
+  color: #fff;
+  margin: 0 15px;
+  transition: 0.6s;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    background-color: #aaa;
+  }
 }
 /*
 ==============

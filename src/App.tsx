@@ -1,14 +1,15 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { Switch, Route, Redirect, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import InvestmentForm from "./Components/InvestmentForm";
+import About from "./Components/About";
 import calculateCompound from "./utils/Calculator";
 import findInputSource from "./utils/findInputSource";
 import validateInputs from "./utils/validateInputs";
 import { fieldErrors } from "./utils/interfaces";
 import { Container } from "react-bootstrap";
-import numeral from "numeral";
 
-function App() {
+const App = () => {
   const [inputs, setInputs] = useState({
     principal: 10000,
     annualContribution: 100,
@@ -38,16 +39,24 @@ function App() {
     handleFormChange({ target: { name: "" } });
   }, [handleFormChange]);
 
-  const investmentFormProps = { handleFormChange, inputs, fieldErrors };
+  const investmentFormProps = { handleFormChange, inputs, fieldErrors, total };
 
   return (
     <Container className='app'>
+      <Link to='/calculator' className="link">Calculator</Link>
+      <Link to='/about' className="link">About</Link>
       <h1 className='text-center'>Levi's Compound Interest Calculator</h1>
-      <h2 className='future-balance'>Future Balance</h2>
-      <h2 className='total'>${numeral(total).format("0,0")}</h2>
-      <InvestmentForm {...investmentFormProps} />
+      <Switch>
+        <Route exact path='/calculator'>
+          <InvestmentForm {...investmentFormProps} />
+        </Route>
+        <Route path='/about' component={About} />
+        <Route path='*'>
+          <Redirect to='/calculator' />
+        </Route>
+      </Switch>
     </Container>
   );
-}
+};
 
 export default App;
