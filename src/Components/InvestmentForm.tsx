@@ -1,4 +1,3 @@
-import React from "react";
 import { Form, Alert } from "react-bootstrap";
 import { Props } from "./../utils/interfaces";
 import numeral from "numeral";

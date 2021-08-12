@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Switch, Route, Redirect, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import InvestmentForm from "./Components/InvestmentForm";
@@ -43,16 +43,20 @@ const App = () => {
 
   return (
     <Container className='app'>
-      <Link to='/calculator' className="link">Calculator</Link>
-      <Link to='/about' className="link">About</Link>
+      <Link to='/Compound-interest-calculator' className='link'>
+        Calculator
+      </Link>
+      <Link to='/about' className='link'>
+        About
+      </Link>
       <h1 className='text-center'>Levi's Compound Interest Calculator</h1>
       <Switch>
-        <Route exact path='/calculator'>
+        <Route exact path='/Compound-interest-calculator'>
           <InvestmentForm {...investmentFormProps} />
         </Route>
-        <Route path='/about' component={About} />
+        <Route exact path='/about' component={About} />
         <Route path='*'>
-          <Redirect to='/calculator' />
+          <Redirect to='/Compound-interest-calculator' />
         </Route>
       </Switch>
     </Container>
