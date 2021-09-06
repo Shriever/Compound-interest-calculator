@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Switch, Route, Redirect, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.scss";
 import InvestmentForm from "./Components/InvestmentForm";
 import About from "./Components/About";
 import calculateCompound from "./utils/Calculator";
