@@ -20,7 +20,7 @@ const validateRateOfReturn = (rateOfReturn: number) => {
   return "";
 };
 
-const validateInputs = (inputs: userData, setFieldErrors: any) => {
+export const validateInputs = (inputs: userData) => {
   const newFieldErrors: fieldErrors = {
     principal: "",
     annualContribution: "",
@@ -34,7 +34,5 @@ const validateInputs = (inputs: userData, setFieldErrors: any) => {
   newFieldErrors.timeSpan = validateTimeSpan(inputs.timeSpan);
   newFieldErrors.rateOfReturn = validateRateOfReturn(inputs.rateOfReturn);
 
-  setFieldErrors(newFieldErrors);
+  return newFieldErrors;
 };
-
-export default validateInputs;

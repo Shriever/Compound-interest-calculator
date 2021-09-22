@@ -6,7 +6,7 @@ import InvestmentForm from "./Components/InvestmentForm";
 import About from "./Components/About";
 import calculateCompound from "./utils/Calculator";
 import findInputSource from "./utils/findInputSource";
-import validateInputs from "./utils/validateInputs";
+import { validateInputs } from "./utils/validateInputs";
 import { fieldErrors } from "./utils/interfaces";
 import { Container } from "react-bootstrap";
 
@@ -27,7 +27,8 @@ const App = () => {
 
   const handleFormChange = useCallback(
     (e: any) => {
-      validateInputs(inputs, setFieldErrors);
+      const errors = validateInputs(inputs);
+      setFieldErrors(errors)
       setInputs(prevState => {
         return findInputSource(e, prevState);
       });
