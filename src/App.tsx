@@ -26,7 +26,7 @@ const App = () => {
   });
 
   const handleFormChange = useCallback(
-    (e: any) => {
+    (e: InputEvent | any) => {
       const errors = validateInputs(inputs);
       setFieldErrors(errors)
       setInputs(prevState => {
