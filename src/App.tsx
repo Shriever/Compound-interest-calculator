@@ -45,7 +45,7 @@ const App = () => {
 
   return (
     <Container className='app'>
-      <Link to='/Compound-interest-calculator' className='link'>
+      <Link to='/' className='link'>
         Calculator
       </Link>
       <Link to='/about' className='link'>
@@ -53,12 +53,12 @@ const App = () => {
       </Link>
       <h1 className='text-center'>Levi's Compound Interest Calculator</h1>
       <Switch>
-        <Route exact path='/Compound-interest-calculator'>
+        <Route exact path='/'>
           <InvestmentForm {...investmentFormProps} />
         </Route>
         <Route exact path='/about' component={About} />
         <Route path='*'>
-          <Redirect to='/Compound-interest-calculator' />
+          <Redirect to='/' />
         </Route>
       </Switch>
     </Container>
