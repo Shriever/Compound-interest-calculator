@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Switch, Route, Redirect, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
 import "./index.scss";
 import InvestmentForm from "./Components/InvestmentForm";
 import About from "./Components/About";
@@ -8,7 +9,6 @@ import calculateCompound from "./utils/Calculator";
 import findInputSource from "./utils/findInputSource";
 import { validateInputs } from "./utils/validateInputs";
 import { fieldErrors } from "./utils/interfaces";
-import { Container } from "react-bootstrap";
 
 const App = () => {
   const [inputs, setInputs] = useState({
