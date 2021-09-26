@@ -3,11 +3,12 @@ import { Props } from "./../utils/interfaces";
 import numeral from "numeral";
 
 const InvestmentForm = (props: Props) => {
-  const { handleFormChange, inputs } = props;
+  const { handleFormChange, inputs, total } = props;
+  const formattedTotal = numeral(total).format("0,0");
   return (
     <>
       <h2 className='future-balance'>Future Balance</h2>
-      <h2 className='total'>${numeral(props.total).format("0,0")}</h2>
+      <h2 className='total'>${formattedTotal}</h2>
 
       <Form className='bt-1 investment-form'>
         <Form.Group controlId='formBasicPrincipal'>
