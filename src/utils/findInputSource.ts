@@ -1,10 +1,10 @@
 const findInputSource = (e: any, prevState: any) => {
   const inputName: string = e.target.name;
-  const inputValue: number = e.target.value;
+  const inputValue: number = parseInt(e.target.value);
   if (inputName === "principal") {
     return {
       ...prevState,
-      principal: Number(inputValue),
+      principal: inputValue,
     };
   } else if (inputName === "annual-contribution") {
     return {
