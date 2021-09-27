@@ -1,4 +1,6 @@
-const findInputSource = (e: any, prevState: any) => {
+import { userData } from "./interfaces";
+
+const findInputSource = (e: any, prevState: userData) => {
   const inputName: string = e.target.name;
   const inputValue: number = parseInt(e.target.value);
   if (inputName === "principal") {
