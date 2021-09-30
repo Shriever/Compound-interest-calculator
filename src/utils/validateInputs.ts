@@ -27,6 +27,7 @@ export const validateInputs = (inputs: userData) => {
     timeSpan: "",
     rateOfReturn: "",
   };
+  
   newFieldErrors.principal = validatePrincipal(inputs.principal);
   newFieldErrors.annualContribution = validateAnnualContributions(
     inputs.annualContribution
