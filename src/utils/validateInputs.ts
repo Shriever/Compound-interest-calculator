@@ -1,4 +1,4 @@
-import { fieldErrors, userData } from "./interfaces";
+import { FieldErrors, UserData } from "./interfaces";
 
 const validatePrincipal = (principal: number) => {
   if (principal <= 0) return "Please enter an investment amount above 0";
@@ -20,8 +20,8 @@ const validateRateOfReturn = (rateOfReturn: number) => {
   return "";
 };
 
-export const validateInputs = (inputs: userData) => {
-  const newFieldErrors: fieldErrors = {
+export const validateInputs = (inputs: UserData) => {
+  const newFieldErrors: FieldErrors = {
     principal: "",
     annualContribution: "",
     timeSpan: "",

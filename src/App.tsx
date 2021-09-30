@@ -8,7 +8,7 @@ import About from "./Components/About";
 import calculateCompound from "./utils/Calculator";
 import findInputSource from "./utils/findInputSource";
 import { validateInputs } from "./utils/validateInputs";
-import { fieldErrors } from "./utils/interfaces";
+import { FieldErrors } from "./utils/interfaces";
 
 const App = () => {
   const [inputs, setInputs] = useState({
@@ -18,7 +18,7 @@ const App = () => {
     rateOfReturn: 10,
   });
   const [total, setTotal] = useState<number>(0);
-  const [fieldErrors, setFieldErrors] = useState<fieldErrors>({
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({
     principal: "",
     annualContribution: "",
     timeSpan: "",

@@ -1,6 +1,6 @@
-import { userData } from "./interfaces";
+import { U } from "./interfaces";
 
-const calculateCompound = (data: userData) => {
+const calculateCompound = (data: U) => {
   const { principal, annualContribution, timeSpan, rateOfReturn } = data;
 
   const rate = rateOfReturn / 100;

@@ -1,11 +1,11 @@
-export interface userData {
+export interface UserData {
   principal: number;
   annualContribution: number;
   timeSpan: number;
   rateOfReturn: number;
 }
 
-export interface fieldErrors {
+export interface FieldErrors {
   principal: string | null | undefined;
   annualContribution: string | null | undefined;
   timeSpan: string | null | undefined;
@@ -14,7 +14,7 @@ export interface fieldErrors {
 
 export interface Props {
   handleFormChange: (e: any) => void;
-  inputs: userData;
-  fieldErrors: fieldErrors;
+  inputs: UserData;
+  fieldErrors: FieldErrors;
   total: number;
 }

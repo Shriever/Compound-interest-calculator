@@ -1,6 +1,6 @@
-import { userData } from "./interfaces";
+import { U } from "./interfaces";
 
-const findInputSource = (e: any, prevState: userData) => {
+const findInputSource = (e: any, prevState: U) => {
   const inputName: string = e.target.name;
   const inputValue: number = parseInt(e.target.value);
   if (inputName === "principal") {
