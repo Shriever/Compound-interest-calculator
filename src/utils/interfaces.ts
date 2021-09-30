@@ -17,5 +17,4 @@ export interface Props {
   inputs: userData;
   fieldErrors: fieldErrors;
   total: number;
-  // className: string;
 }
