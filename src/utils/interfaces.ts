@@ -5,11 +5,13 @@ export interface UserData {
   rateOfReturn: number;
 }
 
+type FieldError = string | null | undefined;
+
 export interface FieldErrors {
-  principal: string | null | undefined;
-  annualContribution: string | null | undefined;
-  timeSpan: string | null | undefined;
-  rateOfReturn: string | null | undefined;
+  principal: FieldError;
+  annualContribution: FieldError;
+  timeSpan: FieldError;
+  rateOfReturn: FieldError;
 }
 
 export interface Props {
