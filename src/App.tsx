@@ -53,7 +53,7 @@ const App = () => {
       <Link to='/about' className='link'>
         About
       </Link>
-      <h1 className='text-center'>Levi's Compound Interest Calculator</h1>
+      <h1 data-testid="header" className='text-center'>Levi's Compound Interest Calculator</h1>
       <Switch>
         <Route exact path='/'>
           <InvestmentForm {...investmentFormProps} />
