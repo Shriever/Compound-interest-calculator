@@ -19,8 +19,11 @@ const sampleProps = {
   total: 1000,
   handleFormChange: e => null,
 };
-test('works', () => {
+test('renders a form with default values', async () => {
   const screen = render(<InvestmentForm {...sampleProps} />);
 
   expect(screen.getByText('Future Balance')).toBeInTheDocument();
+  const total = await screen.findByTestId('total');
+  expect(total).toBeInTheDocument();
+  expect(total.textContent).toEqual("$1,000")
 });

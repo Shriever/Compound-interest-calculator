@@ -8,7 +8,7 @@ const InvestmentForm = (props: Props) => {
   return (
     <>
       <h2 className='future-balance'>Future Balance</h2>
-      <h2 className='total'>${formattedTotal}</h2>
+      <h2 data-testid="total" className='total'>${formattedTotal}</h2>
 
       <Form className='bt-1 investment-form'>
         <Form.Group controlId='formBasicPrincipal'>
