@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import App from '../App';
 import { BrowserRouter } from 'react-router-dom';
 
-test('works', () => {
+test('works', async () => {
   const screen = render(
     <BrowserRouter>
       <App />
@@ -12,4 +12,7 @@ test('works', () => {
   );
 
   expect(screen.getByTestId('header')).toBeInTheDocument();
+  const total = await screen.findByTestId('total');
+  expect(total).toBeInTheDocument();
+  expect(total.textContent).toEqual('$16,777');
 });
