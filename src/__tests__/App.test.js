@@ -18,4 +18,6 @@ test('renders a form with default values', async () => {
 
   const form = await screen.findByTestId('form');
   expect(form).toBeInTheDocument();
+
+  const input = await screen.findBy
 });

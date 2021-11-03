@@ -20,6 +20,7 @@ const InvestmentForm = (props: Props) => {
             min='100'
             type='number'
             name='principal'
+            data-testid='principal'
             value={inputs.principal}
             onChange={handleFormChange}
           />
@@ -36,6 +37,7 @@ const InvestmentForm = (props: Props) => {
             min='0'
             type='number'
             name='annual-contribution'
+            data-testid='annual-contribution'
             value={inputs.annualContribution}
             onChange={handleFormChange}
           />
@@ -52,6 +54,7 @@ const InvestmentForm = (props: Props) => {
             min='0'
             type='number'
             name='time-span'
+            data-testid='time-span'
             value={inputs.timeSpan}
             onChange={handleFormChange}
           />
@@ -69,6 +72,7 @@ const InvestmentForm = (props: Props) => {
             max='1000'
             type='number'
             name='rate-of-return'
+            data-testid='rate-of-return'
             value={inputs.rateOfReturn}
             onChange={handleFormChange}
           />
