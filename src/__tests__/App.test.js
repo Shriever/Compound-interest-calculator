@@ -30,4 +30,9 @@ test('renders a form with default values', async () => {
   expect(annualContributionInput).toBeInTheDocument();
   expect(timeSpanInput).toBeInTheDocument();
   expect(rateOfReturnInput).toBeInTheDocument();
+
+  expect(principalInput.value).toBe('10000');
+  expect(annualContributionInput.value).toBe('100');
+  expect(timeSpanInput.value).toBe('5');
+  expect(rateOfReturnInput.value).toBe('10');
 });
