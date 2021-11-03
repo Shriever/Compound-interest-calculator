@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import App from '../App';
 import { BrowserRouter } from 'react-router-dom';
 
-test('works', async () => {
+test('renders a form with default values', async () => {
   const screen = render(
     <BrowserRouter>
       <App />
@@ -15,4 +15,7 @@ test('works', async () => {
   const total = await screen.findByTestId('total');
   expect(total).toBeInTheDocument();
   expect(total.textContent).toEqual('$16,777');
+
+  const form = await screen.findByTestId('form');
+  expect(form).toBeInTheDocument();
 });
