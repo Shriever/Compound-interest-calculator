@@ -19,5 +19,15 @@ test('renders a form with default values', async () => {
   const form = await screen.findByTestId('form');
   expect(form).toBeInTheDocument();
 
-  const input = await screen.findBy
+  const principalInput = await screen.findByTestId('principal');
+  const annualContributionInput = await screen.findByTestId(
+    'annual-contribution'
+  );
+  const timeSpanInput = await screen.findByTestId('time-span');
+  const rateOfReturnInput = await screen.findByTestId('rate-of-return');
+
+  expect(principalInput).toBeInTheDocument();
+  expect(annualContributionInput).toBeInTheDocument();
+  expect(timeSpanInput).toBeInTheDocument();
+  expect(rateOfReturnInput).toBeInTheDocument();
 });
