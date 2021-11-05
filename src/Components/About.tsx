@@ -17,9 +17,9 @@ const About = () => {
       <br />
       <h2>Tech Used</h2>
       <div className='about-images'>
-        <img src={reactLogo} alt='' width='200' />
-        <img src={typescriptLogo} alt='' width='200' />
-        <img src={sassLogo} alt='' width='200' />
+        <img src={reactLogo} alt='react-logo' width='200' />
+        <img src={typescriptLogo} alt='typescript-logo' width='200' />
+        <img src={sassLogo} alt='sass-logo' width='200' />
       </div>
     </div>
   );
