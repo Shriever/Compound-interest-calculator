@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import App from '../App';
 import { BrowserRouter } from 'react-router-dom';
 
-test('works', () => {
+test('renders a form with default values', async () => {
   const screen = render(
     <BrowserRouter>
       <App />
@@ -12,4 +12,27 @@ test('works', () => {
   );
 
   expect(screen.getByTestId('header')).toBeInTheDocument();
+  const total = await screen.findByTestId('total');
+  expect(total).toBeInTheDocument();
+  expect(total.textContent).toEqual('$16,777');
+
+  const form = await screen.findByTestId('form');
+  expect(form).toBeInTheDocument();
+
+  const principalInput = await screen.findByTestId('principal');
+  const annualContributionInput = await screen.findByTestId(
+    'annual-contribution'
+  );
+  const timeSpanInput = await screen.findByTestId('time-span');
+  const rateOfReturnInput = await screen.findByTestId('rate-of-return');
+
+  expect(principalInput).toBeInTheDocument();
+  expect(annualContributionInput).toBeInTheDocument();
+  expect(timeSpanInput).toBeInTheDocument();
+  expect(rateOfReturnInput).toBeInTheDocument();
+
+  expect(principalInput.value).toBe('10000');
+  expect(annualContributionInput.value).toBe('100');
+  expect(timeSpanInput.value).toBe('5');
+  expect(rateOfReturnInput.value).toBe('10');
 });

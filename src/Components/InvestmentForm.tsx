@@ -8,9 +8,11 @@ const InvestmentForm = (props: Props) => {
   return (
     <>
       <h2 className='future-balance'>Future Balance</h2>
-      <h2 className='total'>${formattedTotal}</h2>
+      <h2 data-testid='total' className='total'>
+        ${formattedTotal}
+      </h2>
 
-      <Form className='bt-1 investment-form'>
+      <Form data-testid='form' className='bt-1 investment-form'>
         <Form.Group controlId='formBasicPrincipal'>
           <Form.Label>Initial Investment</Form.Label>
           <Form.Control
@@ -18,6 +20,7 @@ const InvestmentForm = (props: Props) => {
             min='100'
             type='number'
             name='principal'
+            data-testid='principal'
             value={inputs.principal}
             onChange={handleFormChange}
           />
@@ -34,6 +37,7 @@ const InvestmentForm = (props: Props) => {
             min='0'
             type='number'
             name='annual-contribution'
+            data-testid='annual-contribution'
             value={inputs.annualContribution}
             onChange={handleFormChange}
           />
@@ -50,6 +54,7 @@ const InvestmentForm = (props: Props) => {
             min='0'
             type='number'
             name='time-span'
+            data-testid='time-span'
             value={inputs.timeSpan}
             onChange={handleFormChange}
           />
@@ -67,6 +72,7 @@ const InvestmentForm = (props: Props) => {
             max='1000'
             type='number'
             name='rate-of-return'
+            data-testid='rate-of-return'
             value={inputs.rateOfReturn}
             onChange={handleFormChange}
           />
